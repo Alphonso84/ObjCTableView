@@ -8,8 +8,12 @@
 
 #import "ViewController.h"
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property(nonatomic, weak) NSMutableArray *family;
+
 @end
 
 @implementation ViewController
@@ -28,22 +32,41 @@
     
 }
 
+
+
+- (void)viewWillAppear:(BOOL)animated {
+     
+    _family = self.createArray;
+}
+
+- (NSMutableArray*)createArray {
+    NSMutableArray *family = [[NSMutableArray alloc] init];
+    [family addObject:@"Alphonso"];
+    [family addObject:@"Chelsea"];
+    [family addObject:@"Danielle"];
+    [family addObject:@"Joseph"];
+    [family addObject:@"Aaron"];
+    [family addObject:@"Ashley"];
+    
+    return family;
+}
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     if (myCell != nil) {
         myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:@"myCell"];
-        myCell.textLabel.text = @"Hello World";
-        myCell.detailTextLabel.text = @"job";
-        myCell.imageView.image = [UIImage imageNamed:@"person.and.person.fill"];
+       
     }
-    
+    myCell.textLabel.text = _family[indexPath.row];
+           myCell.detailTextLabel.text = @"job";
+           myCell.imageView.image = [UIImage imageNamed:@"person.and.person.fill"];
     
     return myCell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [_family count];
 }
 
 @end
