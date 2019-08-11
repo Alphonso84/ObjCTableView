@@ -32,10 +32,8 @@
     
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated {
-     
+    
     self.family = self.createArray;
 }
 
@@ -55,12 +53,11 @@
     UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     if (myCell != nil) {
         myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:@"myCell"];
-       
+                                        reuseIdentifier:@"myCell"];
     }
     myCell.textLabel.text = _family[indexPath.row];
-           myCell.detailTextLabel.text = @"job";
-           myCell.imageView.image = [UIImage imageNamed:@"person.and.person.fill"];
+    myCell.detailTextLabel.text = @"job";
+    myCell.imageView.image = [UIImage imageNamed:@"person.and.person.fill"];
     
     return myCell;
 }
