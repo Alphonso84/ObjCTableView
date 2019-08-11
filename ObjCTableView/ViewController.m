@@ -12,7 +12,7 @@
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property(nonatomic, weak) NSMutableArray *family;
+@property(nonatomic, strong) NSMutableArray *family;
 
 @end
 
@@ -36,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
      
-    _family = self.createArray;
+    self.family = self.createArray;
 }
 
 - (NSMutableArray*)createArray {
@@ -66,7 +66,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_family count];
+    return 6;
 }
 
 @end
