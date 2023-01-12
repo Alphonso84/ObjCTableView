@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "ObjCTableView-Swift.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -18,11 +19,12 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     CGFloat screenHeight = self.view.frame.size.height;
     CGFloat screenWidth = self.view.frame.size.width;
-    // Do any additional setup after loading the view.
+    
     UITableView *tableView = [[UITableView alloc] init];
     tableView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, screenWidth, screenHeight);
     [tableView registerClass:UITableViewCell.self forCellReuseIdentifier:@"myCell"];
@@ -41,10 +43,12 @@
     NSMutableArray *family = [[NSMutableArray alloc] init];
     [family addObject:@"Alphonso"];
     [family addObject:@"Chelsea"];
+    [family addObject:@"Makena"];
     [family addObject:@"Danielle"];
     [family addObject:@"Joseph"];
     [family addObject:@"Aaron"];
     [family addObject:@"Ashley"];
+    [family addObject:@"Lucas"];
     
     return family;
 }
@@ -57,13 +61,19 @@
     }
     myCell.textLabel.text = _family[indexPath.row];
     myCell.detailTextLabel.text = @"job";
+    myCell.detailTextLabel.textColor = UIColor.grayColor;
     myCell.imageView.image = [UIImage imageNamed:@"person.and.person.fill"];
     
     return myCell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return [self.family count];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIViewController *familyDetailView = [[DetailFamilyScreen alloc] init];
+    [self presentViewController:familyDetailView animated:YES completion:nil];
 }
 
 @end

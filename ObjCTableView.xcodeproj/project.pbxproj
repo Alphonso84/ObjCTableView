@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8926FF2E297084D10017C690 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926FF2D297084D10017C690 /* DetailScreen.swift */; };
 		898794D022FCED1E0091AE3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898794CF22FCED1E0091AE3D /* AppDelegate.m */; };
 		898794D322FCED1E0091AE3D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898794D222FCED1E0091AE3D /* SceneDelegate.m */; };
 		898794D622FCED1E0091AE3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898794D522FCED1E0091AE3D /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8926FF2C297084D10017C690 /* ObjCTableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCTableView-Bridging-Header.h"; sourceTree = "<group>"; };
+		8926FF2D297084D10017C690 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		898794CB22FCED1E0091AE3D /* ObjCTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898794CE22FCED1E0091AE3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		898794CF22FCED1E0091AE3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,8 +48,10 @@
 		898794C222FCED1E0091AE3D = {
 			isa = PBXGroup;
 			children = (
+				8926FF2D297084D10017C690 /* DetailScreen.swift */,
 				898794CD22FCED1E0091AE3D /* ObjCTableView */,
 				898794CC22FCED1E0091AE3D /* Products */,
+				8926FF2C297084D10017C690 /* ObjCTableView-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,11 +107,12 @@
 		898794C322FCED1E0091AE3D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Alphonso Sensley II";
 				TargetAttributes = {
 					898794CA22FCED1E0091AE3D = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -146,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8926FF2E297084D10017C690 /* DetailScreen.swift in Sources */,
 				898794D622FCED1E0091AE3D /* ViewController.m in Sources */,
 				898794D022FCED1E0091AE3D /* AppDelegate.m in Sources */,
 				898794E122FCED210091AE3D /* main.m in Sources */,
@@ -201,6 +208,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -259,6 +267,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -281,6 +290,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -289,7 +299,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 6257XTCRBF;
 				INFOPLIST_FILE = ObjCTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -298,6 +310,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alphonso-Sensley-II.ObjCTableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCTableView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,7 +321,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 6257XTCRBF;
 				INFOPLIST_FILE = ObjCTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,6 +332,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Alphonso-Sensley-II.ObjCTableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCTableView-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
